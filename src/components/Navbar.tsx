@@ -39,7 +39,7 @@ const Navbar = () => {
 
   // Close mobile menu on ESC key
   useEffect(() => {
-    const handleEscape = (e) => {
+    const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setIsOpen(false);
     };
 

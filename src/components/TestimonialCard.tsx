@@ -1,18 +1,19 @@
 import { motion } from 'framer-motion';
-import PropTypes from 'prop-types';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+
+interface TestimonialCardProps {
+  name: string;
+  role: string;
+  company?: string;
+  image?: string;
+  testimonial: string;
+  rating?: number;
+}
 
 /**
  * Testimonial Card component for displaying client reviews
- *
- * @param {string} name - Client name
- * @param {string} role - Client role/position
- * @param {string} company - Client company
- * @param {string} image - Client avatar/image URL
- * @param {string} testimonial - Testimonial text
- * @param {number} rating - Rating out of 5
  */
-const TestimonialCard = ({
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
   name,
   role,
   company,
@@ -103,15 +104,6 @@ const TestimonialCard = ({
       </div>
     </motion.div>
   );
-};
-
-TestimonialCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  role: PropTypes.string.isRequired,
-  company: PropTypes.string,
-  image: PropTypes.string,
-  testimonial: PropTypes.string.isRequired,
-  rating: PropTypes.number,
 };
 
 export default TestimonialCard;

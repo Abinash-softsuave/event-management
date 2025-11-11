@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import SectionHeader from '../components/SectionHeader';
-import { validateContactForm } from '../utils/validation';
+import { validateContactForm, ContactFormData, ValidationErrors } from '../utils/validation';
 
 /**
  * Contact Page - Contact form with validation and contact information
  */
 const Contact = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     phone: '',
     message: '',
   });
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<ValidationErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -24,14 +24,14 @@ const Contact = () => {
   }, []);
 
   // Handle input change
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value,
     }));
     // Clear error for this field
-    if (errors[name]) {
+    if (errors[name as keyof ValidationErrors]) {
       setErrors(prev => ({
         ...prev,
         [name]: '',
@@ -40,7 +40,7 @@ const Contact = () => {
   };
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Validate form

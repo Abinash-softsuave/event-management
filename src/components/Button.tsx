@@ -1,19 +1,21 @@
 import { motion } from 'framer-motion';
-import PropTypes from 'prop-types';
+import { ReactNode } from 'react';
+
+interface ButtonProps {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  fullWidth?: boolean;
+  children: ReactNode;
+  className?: string;
+  disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: () => void;
+}
 
 /**
  * Reusable Button component with multiple variants and animations
- *
- * @param {string} variant - Button style variant: 'primary', 'secondary', 'outline', 'ghost'
- * @param {string} size - Button size: 'sm', 'md', 'lg'
- * @param {boolean} fullWidth - Whether button should take full width
- * @param {function} onClick - Click handler
- * @param {ReactNode} children - Button content
- * @param {string} className - Additional CSS classes
- * @param {string} type - Button type: 'button', 'submit', 'reset'
- * @param {boolean} disabled - Whether button is disabled
  */
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
   variant = 'primary',
   size = 'md',
   fullWidth = false,
@@ -22,7 +24,6 @@ const Button = ({
   className = '',
   type = 'button',
   disabled = false,
-  ...props
 }) => {
   // Variant styles
   const variants = {
@@ -63,22 +64,10 @@ const Button = ({
       whileHover={disabled ? {} : { scale: 1.02 }}
       whileTap={disabled ? {} : { scale: 0.98 }}
       disabled={disabled}
-      {...props}
     >
       {children}
     </motion.button>
   );
-};
-
-Button.propTypes = {
-  variant: PropTypes.oneOf(['primary', 'secondary', 'outline', 'ghost']),
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
-  fullWidth: PropTypes.bool,
-  onClick: PropTypes.func,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
-  disabled: PropTypes.bool,
 };
 
 export default Button;
