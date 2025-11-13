@@ -68,7 +68,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <img
-                src="/ms-logo.png"
+                src="/logo.jpg"
                 alt="Memorable Seals Logo"
                 className="w-full h-full object-contain"
               />
