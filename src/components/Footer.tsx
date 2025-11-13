@@ -53,7 +53,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-black text-gray-300 border-t-2 border-gold/20">
       {/* Main Footer Content */}
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -61,14 +61,18 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <motion.div
-                className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
-                whileHover={{ rotate: 5, scale: 1.05 }}
+                className="w-10 h-10 flex items-center justify-center"
+                whileHover={{ scale: 1.05 }}
               >
-                <span className="text-white font-bold text-xl">E</span>
+                <img
+                  src="/ms-logo.png"
+                  alt="Memorable Seals Logo"
+                  className="w-full h-full object-contain"
+                />
               </motion.div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-xl text-white">
-                  EventPro
+                <span className="font-display font-bold text-xl bg-gradient-to-r from-gold via-primary-500 to-gold bg-clip-text text-transparent">
+                  Memorable Seals
                 </span>
                 <span className="text-xs text-gray-400 -mt-1">
                   Event Management
@@ -87,7 +91,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                  className="w-10 h-10 bg-gray-900 rounded-lg flex items-center justify-center hover:bg-gold hover:text-black border border-gold/30 transition-colors"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={social.name}
@@ -114,7 +118,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray-400 hover:text-primary-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-gold transition-colors text-sm"
                   >
                     {link.name}
                   </Link>
@@ -133,7 +137,7 @@ const Footer = () => {
                 <li key={service.name}>
                   <Link
                     to={service.path}
-                    className="text-gray-400 hover:text-primary-400 transition-colors text-sm"
+                    className="text-gray-400 hover:text-gold transition-colors text-sm"
                   >
                     {service.name}
                   </Link>
@@ -150,7 +154,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm">
                 <svg
-                  className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5"
+                  className="w-5 h-5 text-gold flex-shrink-0 mt-0.5"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -174,7 +178,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <svg
-                  className="w-5 h-5 text-primary-400 flex-shrink-0"
+                  className="w-5 h-5 text-gold flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -187,15 +191,15 @@ const Footer = () => {
                   />
                 </svg>
                 <a
-                  href="mailto:info@eventpro.com"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  href="mailto:info@memorableseals.com"
+                  className="text-gray-400 hover:text-gold transition-colors"
                 >
-                  info@eventpro.com
+                  info@memorableseals.com
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm">
                 <svg
-                  className="w-5 h-5 text-primary-400 flex-shrink-0"
+                  className="w-5 h-5 text-gold flex-shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -209,7 +213,7 @@ const Footer = () => {
                 </svg>
                 <a
                   href="tel:+1234567890"
-                  className="text-gray-400 hover:text-primary-400 transition-colors"
+                  className="text-gray-400 hover:text-gold transition-colors"
                 >
                   +1 (234) 567-890
                 </a>
@@ -224,18 +228,18 @@ const Footer = () => {
         <div className="container-custom py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
             <p>
-              &copy; {currentYear} EventPro. All rights reserved.
+              &copy; {currentYear} Memorable Seals Event Management. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
               <Link
                 to="/privacy"
-                className="hover:text-primary-400 transition-colors"
+                className="hover:text-gold transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 to="/terms"
-                className="hover:text-primary-400 transition-colors"
+                className="hover:text-gold transition-colors"
               >
                 Terms of Service
               </Link>

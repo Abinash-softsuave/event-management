@@ -63,17 +63,21 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.div
-              className="w-10 h-10 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-lg flex items-center justify-center"
-              whileHover={{ rotate: 5, scale: 1.05 }}
+              className="w-12 h-12 flex items-center justify-center"
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.2 }}
             >
-              <span className="text-white font-bold text-xl">E</span>
+              <img
+                src="/ms-logo.png"
+                alt="Memorable Seals Logo"
+                className="w-full h-full object-contain"
+              />
             </motion.div>
             <div className="flex flex-col">
-              <span className="font-display font-bold text-xl text-gray-900">
-                EventPro
+              <span className="font-display font-bold text-xl bg-gradient-to-r from-gold via-primary-500 to-gold bg-clip-text text-transparent">
+                Memorable Seals
               </span>
-              <span className="text-xs text-gray-600 -mt-1">
+              <span className="text-xs text-gray-700 -mt-1 font-medium">
                 Event Management
               </span>
             </div>

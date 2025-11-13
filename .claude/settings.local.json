@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(if not exist \"public\\assets\\images\" mkdir \"public\\assets\\images\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -28,13 +28,13 @@ const Button: React.FC<ButtonProps> = ({
   // Variant styles
   const variants = {
     primary:
-      'bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 shadow-md hover:shadow-lg',
+      'bg-gradient-to-r from-gold-dark to-gold text-black-rich hover:from-gold hover:to-gold-light shadow-md hover:shadow-lg font-bold',
     secondary:
-      'bg-gradient-to-r from-secondary-500 to-secondary-600 text-white hover:from-secondary-600 hover:to-secondary-700 shadow-md hover:shadow-lg',
+      'bg-gradient-to-r from-black to-black-light text-gold hover:from-black-light hover:to-secondary-700 shadow-md hover:shadow-lg border border-gold',
     outline:
-      'border-2 border-primary-500 text-primary-600 hover:bg-primary-50 bg-transparent',
+      'border-2 border-gold text-gold hover:bg-gold hover:text-black bg-transparent',
     ghost:
-      'text-primary-600 hover:bg-primary-50 bg-transparent',
+      'text-gold hover:bg-black-light hover:text-gold-light bg-transparent',
   };
 
   // Size styles
@@ -58,7 +58,7 @@ const Button: React.FC<ButtonProps> = ({
         ${disabled ? disabledStyles : ''}
         font-semibold rounded-lg
         transition-all duration-300 ease-in-out
-        focus:outline-none focus:ring-4 focus:ring-primary-200
+        focus:outline-none focus:ring-4 focus:ring-gold/30
         ${className}
       `}
       whileHover={disabled ? {} : { scale: 1.02 }}
