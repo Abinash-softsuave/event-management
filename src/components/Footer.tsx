@@ -61,11 +61,11 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <motion.div
-                className="w-10 h-10 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
+                className="w-12 h-12 flex items-center justify-center"
+                whileHover={{ scale: 1.05, rotate: 5 }}
               >
                 <img
-                  src="/ms-logo.png"
+                  src="/ms-temp-logo.svg"
                   alt="Memorable Seals Logo"
                   className="w-full h-full object-contain"
                 />

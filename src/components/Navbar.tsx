@@ -63,14 +63,19 @@ const Navbar = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <motion.div
-              className="w-12 h-12 flex items-center justify-center"
-              whileHover={{ scale: 1.05 }}
+              className="w-14 h-14 flex items-center justify-center"
+              whileHover={{ scale: 1.05, rotate: 5 }}
               transition={{ duration: 0.2 }}
             >
               <img
-                src="/logo.jpg"
+                src="/ms-temp-logo.svg"
                 alt="Memorable Seals Logo"
                 className="w-full h-full object-contain"
+                onError={(e) => {
+                  // Fallback if SVG doesn't load
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
               />
             </motion.div>
             <div className="flex flex-col">
