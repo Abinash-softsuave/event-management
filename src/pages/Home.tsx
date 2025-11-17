@@ -252,10 +252,10 @@ const Home = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 animate={aboutInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                 transition={{ delay: 0.5, duration: 0.5 }}
-                className="absolute -bottom-8 -right-8 bg-white rounded-2xl shadow-hover p-6"
+                className="absolute -bottom-4 md:-bottom-8 right-4 md:-right-8 bg-white rounded-2xl shadow-hover p-4 md:p-6"
               >
-                <div className="text-4xl font-display font-bold text-primary-600">15+</div>
-                <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+                <div className="text-3xl md:text-4xl font-display font-bold text-primary-600">15+</div>
+                <div className="text-xs md:text-sm text-gray-600 font-medium">Years Experience</div>
               </motion.div>
             </motion.div>
 
